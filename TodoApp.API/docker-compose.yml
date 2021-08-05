@@ -1,0 +1,19 @@
+﻿version: '3.8'
+
+services:
+  WebSite:
+    image: todoappapi
+    container_name: TodoApp.API
+    build:
+      context: .
+      dockerfile: C:\Users\feyza\source\repos\TodoApp\TodoApp.API
+    ports:
+        - "0.0.0.0:49154:80"
+    networks:
+      - my-network
+    environment:
+      - API_URL=Api:8091
+  
+networks:
+  my-network:
+    external: true

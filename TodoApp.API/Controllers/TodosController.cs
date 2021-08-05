@@ -43,7 +43,7 @@ namespace TodoApp.API.Controllers
             _todoListRepository.Update(todoList);
             return Ok(todoList);
         }
-        [HttpDelete("delete/{id}")]
+        [HttpPost("delete/{id}")]
         public IActionResult DeleteTodoList(Guid id)
         {
             _todoListRepository.Delete(id);
